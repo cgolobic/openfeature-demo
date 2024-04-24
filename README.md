@@ -7,7 +7,7 @@ Demo of [OpenFeature](https://openfeature.dev/) using [flagd](https://flagd.dev/
 ## Running
 1. Run `docker compose up` in the root of this project.
 2. Navigate to `localhost:8111` to view the client Web page.
-3. To see the effect of changing feature flags, edit and save `flagd/demo.flagd.json` then reload the client Web page.
+3. To see the effect of changing feature flags, edit and save `flagd/demo.flagd.json`. The client Web page should be updated to reflect the new flag configuration.
 
 ## Development
 Run `docker compose up --build` to force rebuilding the client image.
