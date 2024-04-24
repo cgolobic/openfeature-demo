@@ -8,6 +8,20 @@
         font-family: sans-serif;
       }
 
+      pre {
+        display: inline-block;
+        background: #657b83;
+        color: #FFFFFF;
+        padding: 0.4rem;
+      }
+
+      .card {
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid #000000;
+        box-shadow: 10px 5px 5px #C0C0C0
+      }
+
       #outage-banner {
         font-weight: 600;
         padding: 1rem;
@@ -24,15 +38,24 @@
   </head>
   <body>
     <h1>OpenFeature Demo</h1>
-    <h2>Boolean Flag</h2>
-    <div id="outage-banner">
-      Sorry! We're experiencing some technical difficulties. Please try again later!
+    <div class="card">
+      <h2>Boolean Flag</h2>
+      <pre>show-outage-banner</pre>
+      <div id="outage-banner">
+        Sorry! We're experiencing some technical difficulties. Please try again later!
+      </div>
     </div>
-    <h2>String Flag</h2>
-    <p>
-      <span id="greeting">
-    </p>
-    <h2>Object Flag</h2>
-    <div id="promotion-banner"></div>
+    <div class="card">
+      <h2>String Flag</h2>
+      <pre>greeting</pre>
+      <p>
+        <span id="greeting">
+      </p>
+    </div>
+    <div class="card">
+      <h2>Object Flag</h2>
+      <pre>promotion-banner</pre>
+      <div id="promotion-banner"></div>
+    </div>
   </body>
 </html>

@@ -27,7 +27,7 @@ function evaluateFlags(client) {
     'promotion-banner',
     {
       "background-color": "#2aa198",
-      "text-color": "",
+      "text-color": "#FFFFFF",
       "body": "Sign up for our email newsletter to never miss a deal!"
     }
   );
