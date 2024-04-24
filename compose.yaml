@@ -8,6 +8,7 @@ services:
       - "./flagd:/etc/flagd"
     command: [ "start", "--uri", "file:./etc/flagd/demo.flagd.json"]
   client:
+    container_name: client
     build: ./client
     ports:
       - "8111:80"
