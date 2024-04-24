@@ -16,6 +16,10 @@ async function getClient() {
 }
 
 function evaluateFlags(client) {
+  const showOutageBanner = client.getBooleanValue('show-outage-banner', false);
+  const outageBannerDiv = document.getElementById('outage-banner');
+  outageBannerDiv.style.visibility = showOutageBanner ? 'visible' : 'hidden';
+
   const greeting = client.getStringValue('greeting', 'Hello!');
   document.getElementById('greeting').innerText = greeting;
 
@@ -27,10 +31,10 @@ function evaluateFlags(client) {
       "body": "Sign up for our email newsletter to never miss a deal!"
     }
   );
-  const bannerDiv = document.getElementById('promotion-banner');
-  bannerDiv.style.backgroundColor = promotionBanner.backgroundColor;
-  bannerDiv.style.color = promotionBanner.textColor;
-  bannerDiv.innerText = promotionBanner.body;
+  const promotionBannerDiv = document.getElementById('promotion-banner');
+  promotionBannerDiv.style.backgroundColor = promotionBanner.backgroundColor;
+  promotionBannerDiv.style.color = promotionBanner.textColor;
+  promotionBannerDiv.innerText = promotionBanner.body;
 }
 
 getClient().then(client => {
