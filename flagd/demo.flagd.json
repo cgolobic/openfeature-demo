@@ -1,0 +1,14 @@
+{
+  "$schema": "https://flagd.dev/schema/v0/flags.json",
+  "flags": {
+    "greeting": {
+      "state": "ENABLED",
+      "variants": {
+        "hello": "Hello!",
+        "hi": "Hi!",
+        "salutations": "Salutations!"
+      },
+      "defaultVariant": "hello"
+    }
+  }
+}
