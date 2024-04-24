@@ -50,7 +50,41 @@ function evaluateFlags(client) {
   promotionBannerDiv.innerText = promotionBanner.body;
 }
 
+async function flipCoins(client) {
+  let headsCount = 0;
+  let tailsCount = 0;
+  const resultsTable = document.getElementById('coin-results');
+  resultsTable.replaceChildren();
+  for(let i = 0; i < 100; i++) {
+    await OpenFeature.setContext({ id: i });
+    const coinFlipResult = client.getStringValue('coin-flip', 'heads');
+    const resultRow = document.createElement('tr');
+    const idCell = document.createElement('td');
+    idCell.innerText = i;
+    const resultCell = document.createElement('td');
+    resultCell.innerText = coinFlipResult;
+    resultRow.appendChild(idCell);
+    resultRow.appendChild(resultCell);
+    resultsTable.appendChild(resultRow);
+    resultCell.style.color = '#FFFFFF';
+    if (coinFlipResult === 'heads') {
+      resultCell.style.backgroundColor = '#d33682';
+      headsCount++;
+    }
+    if (coinFlipResult === 'tails') {
+      resultCell.style.backgroundColor = '#268bd2';
+      tailsCount++;
+    }
+  }
+   document.getElementById('heads-count').innerText = headsCount;
+   document.getElementById('tails-count').innerText = tailsCount;
+}
+
 getClient().then(client => {
   client.addHandler(ProviderEvents.ConfigurationChanged, () => evaluateFlags(client));
   evaluateFlags(client);
+
+  document.getElementById('flip-coins').addEventListener('click', () => {
+   flipCoins(client); 
+  });
 });

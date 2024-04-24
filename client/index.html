@@ -50,6 +50,15 @@
         font-weight: 600;
         padding: 1rem;
       }
+
+      #coin-results-container {
+        height: 30rem;
+        overflow-y: scroll;
+      }
+
+      #coin-results > tr:nth-of-type(even) {
+        background-color: #C0C0C0;
+      }
     </style>
   </head>
   <body>
@@ -90,6 +99,32 @@
       <h2>Object Flag</h2>
       <pre>promotion-banner</pre>
       <div id="promotion-banner"></div>
+    </div>
+    <div class="card">
+      <h2>Fractional Targeting/Bucketing</h2>
+      <pre>coin-flip</pre>
+      <button id="flip-coins" style="display: block;">Flip Coins</button>
+      <div id="coin-results-container" class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Result</th>
+            </tr>
+            <tbody id="coin-results"></tbody>
+          </thead>
+        </table>
+      </div>
+      <table>
+        <tr>
+          <td>Heads:</td>
+          <td id="heads-count"></td>
+        </tr>
+        <tr>
+          <td>Tails:</td>
+          <td id="tails-count"></td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

@@ -47,6 +47,30 @@
         }
       },
       "defaultVariant": "newsletter"
+    },
+    "coin-flip": {
+      "state": "ENABLED",
+      "variants": {
+        "heads": "heads",
+        "tails": "tails"
+      },
+      "targeting": {
+        "fractional": [
+          {
+            "cat": [
+              { "var": "$flagd.flagKey" },
+              { "var": "id" }
+            ]
+          },
+          [
+            "heads", 50
+          ],
+          [
+            "tails", 50
+          ]
+        ]
+      },
+      "defaultVariant": "heads"
     }
   }
 }
