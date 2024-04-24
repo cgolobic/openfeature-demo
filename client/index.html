@@ -8,6 +8,10 @@
         font-family: sans-serif;
       }
 
+      body {
+        max-width: 50rem;
+      }
+
       pre {
         display: inline-block;
         background: #657b83;
@@ -28,6 +32,18 @@
         background-color: #dc322f;
         color: #FFFFFF;
         visibility: hidden;
+      }
+
+      td {
+        padding: 0.4rem;
+      }
+
+      #discount {
+        display: none;
+      }
+
+      #amount-due {
+        border-top: 1px solid #000000;
       }
 
       #promotion-banner {
@@ -51,6 +67,24 @@
       <p>
         <span id="greeting">
       </p>
+    </div>
+    <div class="card">
+      <h2>Number Flag</h2>
+      <pre>discount</pre>
+      <table>
+        <tr>
+          <td>Total:</td>
+          <td id="total-amount"></td>
+        </tr>
+        <tr id="discount">
+          <td>Discount:</td>
+          <td id="discount-amount"></td>
+        </tr>
+        <tr>
+          <td>Amount Due:</td>
+          <td id="amount-due"></td>
+        </tr>
+      </table>
     </div>
     <div class="card">
       <h2>Object Flag</h2>

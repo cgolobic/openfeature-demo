@@ -23,6 +23,19 @@ function evaluateFlags(client) {
   const greeting = client.getStringValue('greeting', 'Hello!');
   document.getElementById('greeting').innerText = greeting;
 
+  const total = 132.16;
+  const discount = client.getNumberValue('discount', 0);
+  const discountAmount = total * discount;
+  const amountDue = total - discountAmount;
+  const totalAmountCell = document.getElementById('total-amount');
+  const discountRow = document.getElementById('discount');
+  const discountAmountCell = document.getElementById('discount-amount');
+  const amountDueCell = document.getElementById('amount-due');
+  totalAmountCell.innerText = `$${total}`;
+  discountRow.style.display = discount === 0 ? 'none' : 'table-row';
+  discountAmountCell.innerText = `-$${discountAmount}`;
+  amountDueCell.innerText = `$${amountDue}`;
+
   const promotionBanner = client.getObjectValue(
     'promotion-banner',
     {

@@ -18,6 +18,15 @@
       },
       "defaultVariant": "hello"
     },
+    "discount": {
+      "state": "ENABLED",
+      "variants": {
+        "50-pct": 0.50,
+        "25-pct": 0.25,
+        "none": 0
+      },
+      "defaultVariant": "none"
+    },
     "promotion-banner": {
       "state": "ENABLED",
       "variants": {
